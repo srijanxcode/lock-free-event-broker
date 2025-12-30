@@ -2,9 +2,8 @@
 
 ## Overview
 This project implements a **high-performance, in-memory event broker** in C++
-using **lock-free ring buffers**. It is designed to demonstrate how
-**low-latency systems** handle concurrent message passing with predictable
-performance.
+using **lock-free ring buffers**. It demonstrates how **low-latency systems**
+handle concurrent message passing with predictable performance.
 
 The goal of this project is **systems-level understanding**, not to build a
 full-featured distributed messaging platform.
@@ -17,14 +16,14 @@ full-featured distributed messaging platform.
 - Fixed-size, pre-allocated memory (no runtime heap allocation)
 - Busy-spin synchronization for low latency
 - Real **TCP ingestion layer** (Windows)
-- Benchmarked and performance-analyzed
+- Benchmarked and performance-analyzed implementation
 
 ---
 
 ## Architecture
 
 
-Core components:
+### Core Components
 - Circular buffer with sequence numbers
 - Atomic slot claiming for producers
 - Ordered publishing to preserve correctness
@@ -122,3 +121,4 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
+
